@@ -2,4 +2,4 @@
 
 ## A Birthday Wishing App using Python, Python tkinter
 
-# ![Preview GIF](demo.mp4)
+# ![Preview GIF](demo.gif)
