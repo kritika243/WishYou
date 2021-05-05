@@ -1,5 +1,5 @@
 import tkinter
-from tkinter import BOTH, StringVar
+from tkinter import BOTH, StringVar, END
 from PIL import Image, ImageTk
 
 # defining main window
@@ -15,7 +15,16 @@ input_color ='#f9cff2'
 output_color = '#a9fbd7'
 root.config(bg=root_color)
 
-# functions
+# function
+def display():
+  if case_style.get()=='normal':
+    wish = tkinter.Label(output_frame, text='Happy Birthday '+ name.get()+' !,🎈', bg=output_color)
+
+  elif case_style.get() =='upper':
+     wish = tkinter.Label(output_frame, text=('Happy Birthday '+ name.get()+'!,🎈').upper(), bg=output_color)
+  wish.pack()
+  # cler the entry field
+  name.delete(0, END)
 
 # layout
 # frames
@@ -26,7 +35,7 @@ output_frame.pack(padx=10, pady=(0,10), fill=BOTH, expand=True)
 
 # widgets
 name = tkinter.Entry(input_frame, text='enter your name', width=20)
-submit = tkinter.Button(input_frame, text='Submit')
+submit = tkinter.Button(input_frame, text='Surprise', command=display)
 name.grid(row=0, column=0, padx=10, pady=10)
 submit.grid(row=0, column=1, padx=10, pady=10, ipadx=20)
 
